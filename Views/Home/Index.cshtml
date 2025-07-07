@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-section">
+    <div class="glass-container main-card">
+        <div class="card-header">
+            <h1 class="hero-title">
+                <i class="fas fa-video"></i>
+                Connect & Chat
+            </h1>
+            <p class="hero-subtitle">Experience seamless video calling with beautiful design</p>
+        </div>
+
+        <div class="card-body">
+            <div class="join-section">
+                <div class="input-group glass-input">
+                    <input type="text" id="userName" placeholder="Enter your name" class="form-input">
+                    <i class="fas fa-user input-icon"></i>
+                </div>
+
+                <div class="input-group glass-input">
+                    <input type="text" id="roomId" placeholder="Room ID (optional)" class="form-input">
+                    <i class="fas fa-door-open input-icon"></i>
+                </div>
+
+                <div class="button-group">
+                    <button id="createRoom" class="btn btn-primary glass-btn">
+                        <i class="fas fa-plus"></i>
+                        Create Room
+                    </button>
+                    <button id="joinRoom" class="btn btn-secondary glass-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Join Room
+                    </button>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-mini">
+                    <i class="fas fa-video feature-icon"></i>
+                    <h3>HD Video</h3>
+                    <p>Crystal clear video quality</p>
+                </div>
+                <div class="feature-card glass-mini">
+                    <i class="fas fa-comments feature-icon"></i>
+                    <h3>Real-time Chat</h3>
+                    <p>Instant messaging</p>
+                </div>
+                <div class="feature-card glass-mini">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Secure</h3>
+                    <p>End-to-end encryption</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/home.js"></script>
+}

@@ -1,0 +1,43 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="hero-section">
+    <div class="glass-container main-card">
+        <div class="card-header">
+            <h1 class="hero-title">
+                <i class="fas fa-exclamation-triangle"></i>
+                Oops! Something went wrong
+            </h1>
+            <p class="hero-subtitle">We encountered an unexpected error</p>
+        </div>
+
+        <div class="card-body">
+            <div class="error-content">
+                <div class="glass-mini">
+                    <h3>What happened?</h3>
+                    <p>An error occurred while processing your request. Please try again later.</p>
+                    
+                    @if (Model.ShowRequestId)
+                    {
+                        <p class="error-id">
+                            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+                        </p>
+                    }
+                </div>
+                
+                <div class="button-group" style="margin-top: 2rem;">
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-primary glass-btn">
+                        <i class="fas fa-home"></i>
+                        Go Home
+                    </a>
+                    <button onclick="history.back()" class="btn btn-secondary glass-btn">
+                        <i class="fas fa-arrow-left"></i>
+                        Go Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

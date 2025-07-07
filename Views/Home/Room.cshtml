@@ -1,0 +1,77 @@
+@{
+    ViewData["Title"] = "Video Room";
+}
+
+<div class="room-container">
+    <div class="video-section">
+        <div class="video-grid">
+            <div class="video-container glass-video">
+                <video id="localVideo" autoplay muted class="video-element"></video>
+                <div class="video-controls">
+                    <button id="toggleVideo" class="control-btn glass-btn-small">
+                        <i class="fas fa-video"></i>
+                    </button>
+                    <button id="toggleAudio" class="control-btn glass-btn-small">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button id="shareScreen" class="control-btn glass-btn-small">
+                        <i class="fas fa-desktop"></i>
+                    </button>
+                    <button id="leaveCall" class="control-btn glass-btn-small danger">
+                        <i class="fas fa-phone-slash"></i>
+                    </button>
+                </div>
+                <div class="video-label">You</div>
+            </div>
+            
+            <div class="video-container glass-video" id="remoteVideoContainer" style="display: none;">
+                <video id="remoteVideo" autoplay class="video-element"></video>
+                <div class="video-label" id="remoteUserLabel">Remote User</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-section">
+        <div class="glass-container chat-container">
+            <div class="chat-header">
+                <h3><i class="fas fa-comments"></i> Chat</h3>
+                <div class="room-info">Room: <span id="roomIdDisplay">@ViewBag.RoomId</span></div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added here -->
+            </div>
+            
+            <div class="chat-input-section">
+                <div class="input-group glass-input">
+                    <input type="text" id="messageInput" placeholder="Type a message..." class="form-input">
+                    <button id="sendMessage" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="room-info-panel glass-container">
+    <div class="info-item">
+        <i class="fas fa-users"></i>
+        <span>Connected: <span id="userCount">1</span></span>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-wifi"></i>
+        <span id="connectionStatus">Connected</span>
+    </div>
+    <div class="info-item">
+        <i class="fas fa-copy copy-room-id" title="Copy Room ID"></i>
+        <span>Share Room</span>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        window.roomId = '@ViewBag.RoomId';
+    </script>
+    <script src="~/js/room.js"></script>
+}
